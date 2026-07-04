@@ -91,6 +91,7 @@ const metadata = {
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const languageButtons = document.querySelectorAll("[data-lang]");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function setLanguage(language) {
   const isEnglish = language === "en";
@@ -136,7 +137,34 @@ function setLanguage(language) {
 }
 
 languageButtons.forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+  button.addEventListener("click", () => {
+    const language = button.dataset.lang;
+    const currentLanguage = document.documentElement.lang === "en" ? "en" : "zh";
+
+    if (language === currentLanguage || document.body.classList.contains("is-language-changing")) {
+      return;
+    }
+
+    if (reducedMotion.matches) {
+      setLanguage(language);
+      return;
+    }
+
+    document.body.classList.add("is-language-changing");
+    document.body.setAttribute("aria-busy", "true");
+    languageButtons.forEach((languageButton) => {
+      languageButton.disabled = true;
+    });
+
+    window.setTimeout(() => setLanguage(language), 260);
+    window.setTimeout(() => {
+      document.body.classList.remove("is-language-changing");
+      document.body.removeAttribute("aria-busy");
+      languageButtons.forEach((languageButton) => {
+        languageButton.disabled = false;
+      });
+    }, 560);
+  });
 });
 
 navToggle.addEventListener("click", () => {
@@ -154,6 +182,18 @@ siteNav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     navToggle.setAttribute("aria-expanded", "false");
     siteNav.classList.remove("is-open");
+  });
+});
+
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.documentElement.classList.add("is-jumping-top");
+    window.scrollTo(0, 0);
+    history.replaceState(null, "", "#top");
+    window.requestAnimationFrame(() => {
+      document.documentElement.classList.remove("is-jumping-top");
+    });
   });
 });
 

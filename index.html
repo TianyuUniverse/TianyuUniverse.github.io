@@ -47,9 +47,10 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <span class="top-anchor" id="top" aria-hidden="true"></span>
     <a class="skip-link" href="#main" data-i18n="skip">跳到主要内容</a>
 
-    <header class="site-header" id="top">
+    <header class="site-header">
       <a class="wordmark" href="#top" aria-label="返回首页" data-i18n-aria="homeLabel">
         <span class="wordmark-mark" aria-hidden="true">TY</span>
         <span class="wordmark-name">Tianyu Chen</span>
@@ -243,26 +244,38 @@
           </div>
 
           <div class="focus-grid">
-            <article class="focus-card reveal">
-              <div class="focus-no">01</div>
+            <article class="focus-card focus-card-model reveal">
+              <div class="focus-card-top">
+                <div class="focus-no">01</div>
+                <div class="focus-graphic model-graphic" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
               <p class="focus-label">FOUNDATION MODEL</p>
               <h3>Tencent<br />Hunyuan LLM</h3>
               <p data-i18n="focus1">关注大语言模型的能力边界、应用开发与工程优化。</p>
-              <div class="focus-arrow" aria-hidden="true">↗</div>
             </article>
-            <article class="focus-card reveal">
-              <div class="focus-no">02</div>
+            <article class="focus-card focus-card-memory reveal">
+              <div class="focus-card-top">
+                <div class="focus-no">02</div>
+                <div class="focus-graphic memory-graphic" aria-hidden="true">
+                  <i></i><span></span><span></span><span></span>
+                </div>
+              </div>
               <p class="focus-label">AGENT MEMORY</p>
               <h3>TencentDB-<br />Agent-Memory</h3>
               <p data-i18n="focus2">探索可检索、可演化的长期记忆如何支撑智能体决策。</p>
-              <div class="focus-arrow" aria-hidden="true">↗</div>
             </article>
-            <article class="focus-card reveal">
-              <div class="focus-no">03</div>
+            <article class="focus-card focus-card-retrieval reveal">
+              <div class="focus-card-top">
+                <div class="focus-no">03</div>
+                <div class="focus-graphic retrieval-graphic" aria-hidden="true">
+                  <span></span><i></i><i></i><i></i>
+                </div>
+              </div>
               <p class="focus-label">KNOWLEDGE RETRIEVAL</p>
               <h3>WeKnora</h3>
               <p data-i18n="focus3">关注文档理解、检索增强生成与知识库应用体验。</p>
-              <div class="focus-arrow" aria-hidden="true">↗</div>
             </article>
           </div>
 

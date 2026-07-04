@@ -24,6 +24,10 @@ html {
   scroll-padding-top: calc(var(--header-h) + 24px);
 }
 
+html.is-jumping-top {
+  scroll-behavior: auto;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -46,6 +50,30 @@ body::before {
   background: radial-gradient(circle at 85% 5%, rgba(128, 216, 207, 0.16), transparent 27%);
   content: "";
   pointer-events: none;
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: var(--teal-light);
+  content: "";
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.top-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+body.is-language-changing::after {
+  animation: language-wipe 560ms cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
 a {
@@ -187,6 +215,10 @@ button {
 .language-switch button[aria-pressed="true"] {
   color: var(--teal);
   opacity: 1;
+}
+
+.language-switch button:disabled {
+  cursor: wait;
 }
 
 .nav-toggle {
@@ -688,49 +720,128 @@ button {
 }
 
 .focus-card {
+  --card-accent: var(--teal-light);
+  --card-surface: rgba(128, 216, 207, 0.045);
   position: relative;
   min-height: 425px;
   padding: 28px;
   overflow: hidden;
   border-right: 1px solid rgba(242, 240, 232, 0.18);
   border-bottom: 1px solid rgba(242, 240, 232, 0.18);
-  transition: color 220ms ease, background 220ms ease;
+  background: var(--card-surface);
+  box-shadow: inset 0 3px var(--card-accent);
+  transition: background 220ms ease, transform 220ms ease;
 }
 
-.focus-card::after {
-  position: absolute;
-  right: -70px;
-  bottom: -100px;
-  width: 220px;
-  height: 220px;
-  border: 1px solid rgba(128, 216, 207, 0.18);
-  border-radius: 50%;
-  content: "";
-  transition: transform 300ms ease;
+.focus-card-model {
+  --card-accent: var(--teal-light);
+  --card-surface: linear-gradient(150deg, rgba(23, 143, 138, 0.13), rgba(23, 143, 138, 0.025) 60%);
+}
+
+.focus-card-memory {
+  --card-accent: #e99a83;
+  --card-surface: linear-gradient(150deg, rgba(231, 111, 81, 0.13), rgba(231, 111, 81, 0.025) 60%);
+}
+
+.focus-card-retrieval {
+  --card-accent: #dec779;
+  --card-surface: linear-gradient(150deg, rgba(222, 199, 121, 0.13), rgba(222, 199, 121, 0.025) 60%);
 }
 
 .focus-card:hover {
-  color: var(--ink);
-  background: var(--teal-light);
+  background-color: rgba(255, 255, 255, 0.04);
+  transform: translateY(-6px);
 }
 
-.focus-card:hover::after {
-  border-color: rgba(16, 46, 53, 0.22);
-  transform: scale(1.3);
-}
-
-.focus-card:hover .focus-label,
-.focus-card:hover .focus-no {
-  color: var(--ink);
+.focus-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 92px;
 }
 
 .focus-no {
-  margin-bottom: 76px;
-  color: rgba(242, 240, 232, 0.36);
+  color: var(--card-accent);
   font-family: Georgia, serif;
   font-size: 12px;
   font-style: italic;
 }
+
+.focus-graphic {
+  position: relative;
+  width: 92px;
+  height: 58px;
+  color: var(--card-accent);
+}
+
+.model-graphic span {
+  position: absolute;
+  right: 0;
+  height: 8px;
+  border: 1px solid currentColor;
+  background: rgba(16, 46, 53, 0.7);
+}
+
+.model-graphic span:nth-child(1) { top: 3px; width: 54px; }
+.model-graphic span:nth-child(2) { top: 23px; width: 72px; }
+.model-graphic span:nth-child(3) { top: 43px; width: 90px; }
+
+.memory-graphic i {
+  position: absolute;
+  top: 28px;
+  right: 10px;
+  left: 10px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.memory-graphic span {
+  position: absolute;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.memory-graphic span:nth-of-type(1) { left: 4px; }
+.memory-graphic span:nth-of-type(2) { left: 37px; background: currentColor; }
+.memory-graphic span:nth-of-type(3) { right: 4px; }
+
+.retrieval-graphic span {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 35px;
+  height: 35px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.retrieval-graphic span::after {
+  position: absolute;
+  right: -13px;
+  bottom: -9px;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.retrieval-graphic i {
+  position: absolute;
+  right: 0;
+  width: 35px;
+  height: 1px;
+  background: currentColor;
+}
+
+.retrieval-graphic i:nth-of-type(1) { top: 9px; }
+.retrieval-graphic i:nth-of-type(2) { top: 25px; width: 26px; }
+.retrieval-graphic i:nth-of-type(3) { top: 41px; width: 42px; }
 
 .focus-card h3 {
   margin: 16px 0 0;
@@ -746,18 +857,6 @@ button {
   margin: 28px 0 0;
   color: rgba(242, 240, 232, 0.58);
   font-size: 13px;
-}
-
-.focus-card:hover > p:last-of-type {
-  color: rgba(16, 46, 53, 0.7);
-}
-
-.focus-arrow {
-  position: absolute;
-  right: 28px;
-  bottom: 24px;
-  z-index: 2;
-  font-size: 20px;
 }
 
 .focus-strip {
@@ -963,6 +1062,25 @@ button {
 
 @keyframes draw-signal {
   to { stroke-dashoffset: 0; }
+}
+
+@keyframes language-wipe {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  48% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  52% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -1305,4 +1423,3 @@ button {
     transform: none;
   }
 }
-
