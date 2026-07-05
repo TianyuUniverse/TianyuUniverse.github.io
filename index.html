@@ -12,15 +12,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:title" content="陈天宇｜研究与开源" />
-    <meta
-      property="og:description"
-      content="深度学习、时序建模、大语言模型、RAG 与 AI Agent。"
-    />
+    <meta property="og:description" content="深度学习、时序建模、大语言模型、RAG 与 AI Agent。" />
     <meta property="og:url" content="https://tianyuuniverse.github.io/" />
     <meta name="twitter:card" content="summary" />
     <link rel="canonical" href="https://tianyuuniverse.github.io/" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>陈天宇｜研究与开源</title>
     <script type="application/ld+json">
       {
@@ -30,7 +26,10 @@
         "alternateName": "陈天宇",
         "url": "https://tianyuuniverse.github.io/",
         "email": "mailto:2693196915@qq.com",
-        "sameAs": ["https://github.com/TianyuUniverse"],
+        "sameAs": [
+          "https://github.com/TianyuUniverse",
+          "https://orcid.org/0009-0006-4264-4068"
+        ],
         "affiliation": {
           "@type": "CollegeOrUniversity",
           "name": "South China University of Technology"
@@ -44,294 +43,9 @@
         ]
       }
     </script>
-    <script src="script.js" defer></script>
   </head>
   <body>
-    <span class="top-anchor" id="top" aria-hidden="true"></span>
-    <a class="skip-link" href="#main" data-i18n="skip">跳到主要内容</a>
-
-    <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="返回首页" data-i18n-aria="homeLabel">
-        <span class="wordmark-mark" aria-hidden="true">TY</span>
-        <span class="wordmark-name">Tianyu Chen</span>
-      </a>
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        aria-label="打开导航"
-        data-i18n-aria="menuOpenLabel"
-      >
-        <span></span><span></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="主要导航" data-i18n-aria="navLabel">
-        <a href="#about" data-i18n="navAbout">关于</a>
-        <a href="#research" data-i18n="navResearch">研究</a>
-        <a href="#open-source" data-i18n="navOpenSource">开源方向</a>
-        <a href="#awards" data-i18n="navAwards">荣誉</a>
-        <a href="#contact" data-i18n="navContact">联系</a>
-      </nav>
-
-      <div class="language-switch" aria-label="语言选择" data-i18n-aria="languageLabel">
-        <button type="button" data-lang="zh" aria-pressed="true">中</button>
-        <span aria-hidden="true">/</span>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-    </header>
-
-    <main id="main">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-copy reveal">
-          <p class="eyebrow" data-i18n="heroEyebrow">研究 · 工程 · 开源</p>
-          <h1 id="hero-title">
-            <span data-i18n="heroHello">你好，我是</span>
-            <strong><span data-i18n="heroName">陈天宇</span><span class="accent-dot" data-i18n="heroPunctuation">。</span></strong>
-          </h1>
-          <p class="hero-alias">Tianyu Chen</p>
-          <p class="hero-lede" data-i18n="heroLede">
-            华南理工大学数据科学与大数据技术专业本科生，关注深度学习、大语言模型、RAG、AI Agent 与时序建模。
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#research">
-              <span data-i18n="viewResearch">查看研究</span>
-              <span aria-hidden="true">↘</span>
-            </a>
-            <a
-              class="button button-quiet"
-              href="https://github.com/TianyuUniverse"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>GitHub</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <dl class="hero-meta" aria-label="个人信息" data-i18n-aria="profileLabel">
-            <div>
-              <dt data-i18n="schoolLabel">学校</dt>
-              <dd data-i18n="schoolValue">华南理工大学</dd>
-            </div>
-            <div>
-              <dt data-i18n="disciplineLabel">方向</dt>
-              <dd data-i18n="disciplineValue">AI × 时序学习</dd>
-            </div>
-            <div>
-              <dt data-i18n="statusLabel">状态</dt>
-              <dd class="status-value"><span class="status-dot"></span><span data-i18n="statusValue">探索开源机会</span></dd>
-            </div>
-          </dl>
-        </div>
-
-        <aside class="hero-visual reveal" aria-label="研究概览" data-i18n-aria="researchOverviewLabel">
-          <div class="visual-topline">
-            <span data-i18n="profileIndex">研究档案 / 01</span>
-            <span>2024—2026</span>
-          </div>
-          <div class="signal-wrap" aria-hidden="true">
-            <svg viewBox="0 0 660 250" role="presentation">
-              <defs>
-                <linearGradient id="signalGradient" x1="0" x2="1">
-                  <stop offset="0" stop-color="#80d8cf" stop-opacity="0.25" />
-                  <stop offset="0.42" stop-color="#80d8cf" />
-                  <stop offset="1" stop-color="#e76f51" />
-                </linearGradient>
-              </defs>
-              <path class="signal-shadow" d="M0 165 L72 165 L84 150 L96 180 L110 165 L194 165 L208 138 L221 194 L238 165 L304 165 L318 120 L335 212 L352 165 L406 165 L421 142 L436 186 L452 165 L515 165 L530 98 L547 221 L564 165 L660 165" />
-              <path class="signal-line" d="M0 165 L72 165 L84 150 L96 180 L110 165 L194 165 L208 138 L221 194 L238 165 L304 165 L318 120 L335 212 L352 165 L406 165 L421 142 L436 186 L452 165 L515 165 L530 98 L547 221 L564 165 L660 165" />
-            </svg>
-            <span class="signal-label signal-label-a">aggregate</span>
-            <span class="signal-label signal-label-b">patterns</span>
-            <span class="signal-label signal-label-c">insight</span>
-          </div>
-          <div class="visual-title">
-            <p data-i18n="visualKicker">从信号中学习结构</p>
-            <h2>Deep Learning<br />× Time Series</h2>
-          </div>
-          <div class="visual-footer">
-            <span>Python</span><span>PyTorch</span><span>LLM</span><span>RAG</span>
-          </div>
-        </aside>
-      </section>
-
-      <section class="about section-shell section-pad" id="about" aria-labelledby="about-title">
-        <div class="section-heading reveal">
-          <p class="section-index">01 / ABOUT</p>
-          <h2 id="about-title" data-i18n="aboutTitle">把研究问题，落到可运行的代码里。</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-statement reveal">
-            <p data-i18n="aboutP1">
-              我是华南理工大学未来技术学院数据科学与大数据技术专业本科生。我的兴趣位于机器学习研究与工程实践的交叉点：理解模型，也关心它如何被实现、验证与应用。
-            </p>
-            <p data-i18n="aboutP2">
-              我曾参与非侵入式负荷监测方向的深度学习研究，负责模型代码实现、实验运行、结果分析与可视化。目前正进一步探索大语言模型、检索增强生成与 Agent Memory。
-            </p>
-          </div>
-          <div class="capability-list reveal" aria-label="技术关注领域" data-i18n-aria="skillsLabel">
-            <div><span>01</span><strong data-i18n="skill1">深度学习与 PyTorch</strong></div>
-            <div><span>02</span><strong data-i18n="skill2">时序建模与零样本学习</strong></div>
-            <div><span>03</span><strong data-i18n="skill3">大语言模型与 RAG</strong></div>
-            <div><span>04</span><strong data-i18n="skill4">AI Agent 与长期记忆</strong></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="research-section section-shell section-pad" id="research" aria-labelledby="research-title">
-        <div class="section-heading reveal">
-          <p class="section-index">02 / RESEARCH</p>
-          <h2 id="research-title" data-i18n="researchTitle">在未标注家庭中，识别每一台电器的能耗。</h2>
-        </div>
-
-        <article class="research-card reveal">
-          <div class="research-card-head">
-            <div>
-              <p class="paper-type" data-i18n="paperType">论文研究 · IEEE Transactions on Smart Grid</p>
-              <h3>Zero-Shot Nonintrusive Load Monitoring via Contrastive Learning-Based Multiscale Dual-Path Temporal Fusion Network</h3>
-            </div>
-            <span class="publication-year">2025</span>
-          </div>
-
-          <div class="research-layout">
-            <div class="research-summary">
-              <p class="lead" data-i18n="researchSummary">
-                面向目标家庭无设备级标签的真实场景，通过对比学习与多尺度双路径时序融合，实现具有跨域泛化能力的非侵入式负荷监测。
-              </p>
-              <div class="role-block">
-                <span class="mini-label" data-i18n="roleLabel">我的参与</span>
-                <p data-i18n="roleText">模型代码实现、实验运行、结果分析与可视化。</p>
-              </div>
-              <a
-                class="text-link"
-                href="https://doi.org/10.1109/TSG.2025.3635148"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span data-i18n="doiLink">查看 DOI / IEEE</span><span aria-hidden="true">↗</span>
-              </a>
-            </div>
-
-            <div class="research-details">
-              <div class="detail-row">
-                <span class="mini-label" data-i18n="problemLabel">问题</span>
-                <p data-i18n="problemText">目标域只有总功率序列，没有单设备标签用于微调。</p>
-              </div>
-              <div class="detail-row">
-                <span class="mini-label" data-i18n="methodLabel">方法</span>
-                <p data-i18n="methodText">对比学习、多尺度特征提取、残差功率解耦与双路径时序融合。</p>
-              </div>
-              <div class="detail-row">
-                <span class="mini-label" data-i18n="stackLabel">技术</span>
-                <ul class="tag-list" aria-label="技术栈" data-i18n-aria="stackAriaLabel">
-                  <li>Python</li><li>PyTorch</li><li>Contrastive Learning</li><li>Time Series</li><li>Zero-Shot</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="open-source section-pad" id="open-source" aria-labelledby="open-source-title">
-        <div class="section-shell">
-          <div class="section-heading light reveal">
-            <p class="section-index">03 / OPEN SOURCE</p>
-            <h2 id="open-source-title" data-i18n="openSourceTitle">把模型能力，连接到真实系统。</h2>
-            <p class="section-intro" data-i18n="openSourceIntro">
-              腾讯开源人才计划关注方向：大模型应用、Agent 长期记忆与可靠的知识检索。
-            </p>
-          </div>
-
-          <div class="focus-grid">
-            <article class="focus-card focus-card-model reveal">
-              <div class="focus-card-top">
-                <div class="focus-no">01</div>
-                <div class="focus-graphic model-graphic" aria-hidden="true">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-              <p class="focus-label">FOUNDATION MODEL</p>
-              <h3>Tencent<br />Hunyuan LLM</h3>
-              <p data-i18n="focus1">关注大语言模型的能力边界、应用开发与工程优化。</p>
-            </article>
-            <article class="focus-card focus-card-memory reveal">
-              <div class="focus-card-top">
-                <div class="focus-no">02</div>
-                <div class="focus-graphic memory-graphic" aria-hidden="true">
-                  <i></i><span></span><span></span><span></span>
-                </div>
-              </div>
-              <p class="focus-label">AGENT MEMORY</p>
-              <h3>TencentDB-<br />Agent-Memory</h3>
-              <p data-i18n="focus2">探索可检索、可演化的长期记忆如何支撑智能体决策。</p>
-            </article>
-            <article class="focus-card focus-card-retrieval reveal">
-              <div class="focus-card-top">
-                <div class="focus-no">03</div>
-                <div class="focus-graphic retrieval-graphic" aria-hidden="true">
-                  <span></span><i></i><i></i><i></i>
-                </div>
-              </div>
-              <p class="focus-label">KNOWLEDGE RETRIEVAL</p>
-              <h3>WeKnora</h3>
-              <p data-i18n="focus3">关注文档理解、检索增强生成与知识库应用体验。</p>
-            </article>
-          </div>
-
-          <div class="focus-strip reveal" aria-label="关注方向" data-i18n-aria="focusLabel">
-            <span>LLM Applications</span><i></i><span>Agent Memory</span><i></i><span>RAG</span><i></i><span>Deep Learning Engineering</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="awards section-shell section-pad" id="awards" aria-labelledby="awards-title">
-        <div class="section-heading reveal">
-          <p class="section-index">04 / RECOGNITION</p>
-          <h2 id="awards-title" data-i18n="awardsTitle">持续验证分析、建模与协作能力。</h2>
-        </div>
-        <ol class="award-list">
-          <li class="reveal">
-            <time datetime="2026">2026</time>
-            <div><h3 data-i18n="award1Title">美国大学生数学建模竞赛</h3><p>MCM · Meritorious Winner</p></div>
-            <span class="award-mark" aria-hidden="true">M</span>
-          </li>
-          <li class="reveal">
-            <time datetime="2025">2025</time>
-            <div><h3 data-i18n="award2Title">华南理工大学数理大赛</h3><p data-i18n="award2Prize">一等奖</p></div>
-            <span class="award-mark" aria-hidden="true">1</span>
-          </li>
-          <li class="reveal">
-            <time datetime="2024">2024</time>
-            <div><h3 data-i18n="award3Title">大学生数学竞赛 · 广东赛区</h3><p data-i18n="award3Prize">二等奖</p></div>
-            <span class="award-mark" aria-hidden="true">2</span>
-          </li>
-          <li class="reveal">
-            <time datetime="2024">2024</time>
-            <div><h3 data-i18n="award4Title">华南理工大学“鼎甲杯”</h3><p data-i18n="award4Prize">三等奖</p></div>
-            <span class="award-mark" aria-hidden="true">3</span>
-          </li>
-        </ol>
-      </section>
-
-      <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
-        <div class="contact-panel reveal">
-          <p class="section-index">05 / CONTACT</p>
-          <h2 id="contact-title" data-i18n="contactTitle">一起讨论研究、代码与开源。</h2>
-          <p data-i18n="contactText">欢迎通过邮件或 GitHub 与我联系。</p>
-          <div class="contact-links">
-            <a href="mailto:2693196915@qq.com">2693196915@qq.com <span aria-hidden="true">↗</span></a>
-            <a href="https://github.com/TianyuUniverse" target="_blank" rel="noreferrer">github.com/TianyuUniverse <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="contact-orbit" aria-hidden="true"><span></span></div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer section-shell">
-      <p>© <span id="current-year">2026</span> Tianyu Chen</p>
-      <p data-i18n="footerText">以清晰的问题、可靠的实验与可运行的代码持续学习。</p>
-      <a href="#top"><span data-i18n="backTop">返回顶部</span> ↑</a>
-    </footer>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

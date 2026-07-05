@@ -20,6 +20,7 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 24px);
 }
@@ -373,6 +374,8 @@ button {
 
 .hero-visual {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 600px;
   overflow: hidden;
   padding: 30px;
@@ -419,7 +422,8 @@ button {
 
 .signal-wrap {
   position: relative;
-  margin: 42px -30px 0;
+  flex: 0 0 auto;
+  margin: 34px -30px 0;
 }
 
 .signal-wrap::before {
@@ -437,7 +441,8 @@ button {
 }
 
 .signal-line,
-.signal-shadow {
+.signal-shadow,
+.signal-flow {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -456,6 +461,26 @@ button {
   stroke-dashoffset: 1100;
   animation: draw-signal 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s forwards;
 }
+
+.signal-flow {
+  stroke: rgba(251, 250, 245, 0.94);
+  stroke-width: 4;
+  stroke-dasharray: 44 1056;
+  stroke-dashoffset: 0;
+  filter: drop-shadow(0 0 7px rgba(128, 216, 207, 0.9));
+  animation: travel-signal 4.8s linear infinite;
+}
+
+.signal-pulse {
+  fill: var(--coral);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: signal-pulse 2.4s ease-out infinite;
+}
+
+.signal-pulse-b { animation-delay: 0.8s; }
+.signal-pulse-c { animation-delay: 1.6s; }
 
 .signal-label {
   position: absolute;
@@ -493,11 +518,10 @@ button {
 }
 
 .visual-footer {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  left: 30px;
+  position: relative;
+  margin-top: 28px;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
@@ -1045,8 +1069,15 @@ button {
   text-align: center;
 }
 
-.site-footer a {
+.site-footer .back-top {
   justify-self: end;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
 }
 
 .has-js .reveal {
@@ -1062,6 +1093,16 @@ button {
 
 @keyframes draw-signal {
   to { stroke-dashoffset: 0; }
+}
+
+@keyframes travel-signal {
+  to { stroke-dashoffset: -1100; }
+}
+
+@keyframes signal-pulse {
+  0% { opacity: 0; transform: scale(0.5); }
+  30% { opacity: 0.9; }
+  100% { opacity: 0; transform: scale(3.2); }
 }
 
 @keyframes language-wipe {
@@ -1331,10 +1372,7 @@ button {
   }
 
   .visual-footer {
-    right: 22px;
-    bottom: 22px;
-    left: 22px;
-    flex-wrap: wrap;
+    margin-top: 24px;
   }
 
   .section-heading {
@@ -1421,5 +1459,10 @@ button {
   .has-js .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .signal-flow,
+  .signal-pulse {
+    display: none;
   }
 }

@@ -1,6 +1,12 @@
 vendor/
 output/
-src/
 tmp/
+src/application/
+src/resume/
+node_modules/
+dist/
+coverage/
+.vite/
+*.local
 .DS_Store
 Thumbs.db
